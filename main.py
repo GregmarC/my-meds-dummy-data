@@ -7,7 +7,7 @@ CORS(app)
 @app.route("/1", methods=["GET", "OPTIONS"])
 def get_example():
     """GET in server"""
-    response = jsonify(data={"meds" : ["tylenol", "advil", "motrin"]})
+    response = jsonify(data={"meds" : [{"medName":"tylenol", "directions":"Once a day, Everyday, 60 tablets", "refill":"11/30/21","exp":"12/31/22"}, {"medName":"advil", "directions":"Twice a day, before breakfast and before dinner, 60 tablets"}], "name" : "Greg Cruz", "age" : "31"})
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
